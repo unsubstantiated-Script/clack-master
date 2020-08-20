@@ -14,6 +14,11 @@ let score = 0;
 
 let time = 10;
 
+let difficulty = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'easy';
+
+difficultySelect.value = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'easy';
+
+
 //Focus on text on start...
 text.focus();
 
@@ -22,7 +27,7 @@ const timeInterval = setInterval(updateTime, 1000);
 
 
 async function getWord(werd) {
-    const res = await fetch(`https://random-word-api.herokuapp.com/word?number=1&swear=1`);
+    const res = await fetch(`https://random-word-api.herokuapp.com/word?number=1&swear=0`);
     const data = await res.json();
     werd = data.toString()
     return werd
@@ -72,8 +77,24 @@ text.addEventListener('input', e => {
 
         e.target.value = '';
 
-        time += 5;
+        if (difficulty === 'hard') {
+            time += 3;
+        } else if (difficulty === 'medium') {
+            time += 4;
+        } else {
+            time += 6;
+        }
+
         updateTime();
     }
 
+})
+
+
+
+settingsBtn.addEventListener('click', () => settings.classList.toggle('show'));
+
+settingsForm.addEventListener('change', e => {
+    difficulty = e.target.value;
+    localStorage.setItem('difficulty', difficulty);
 })
