@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@700&family=Montserrat&display=swap');
+
+:root {
+    --first-color: #F2D06B;
+    --second-color: #49E1F2;
+    --third-color: #2EBBF2;
+    --fourth-color: #1462A6;
+    --fifth-color: #311E59;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--first-color);
+    color: var(--fifth-color);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+button {
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 5px 15px;
+}
+
+select {
+    width: 200px;
+    padding: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+}
+
+select:focus,
+button:focus {
+    outline: 0;
+}
+
+.settings-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.settings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--fourth-color);
+    color: var(--first-color);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.settings.hide {
+    transform: translateY(-100%);
+}
+
+.container {
+    background: var(--second-color);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    width: 500px;
+}
+
+h2 {
+    padding: 8px;
+    margin: 0 0 40px;
+}
+
+h1 {
+    margin: 0;
+}
+
+input {
+    border: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 300px;
+    padding: 12px 20px;
+    margin-top: 10px;
+}
+
+.score-container {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+}
+
+.time-container {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+}
+
+.end-game-container {
+    background: inherit;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+
+
+
+@media (max-width: 500px) {
+    .container {
+        width: 300px;
+    }
+
+    input {
+        width: 250px;
+    }
+}

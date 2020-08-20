@@ -2,15 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Form Validator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Clack Master</title>
 </head>
 
 <body>
+  <button id="settings-btn" class="settings-btn">
+    <i class="fa fa-cog"></i>
+  </button>
 
-    <script src="script.js"></script>
+  <div class="settings" id="settings">
+    <form id="settings-form">
+      <div>
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Wet Noodle</option>
+          <option value="medium">Al Dente</option>
+          <option value="hard">Cronchy!</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="container">
+    <h2>🤜🏽 Clack Master 🤛🏽</h2>
+    <small>Type the following as fast as you can!</small>
+
+    <h1 id="word"></h1>
+    <input type="text" id="text" autocomplete="off" placeholder="Type the word here..." />
+
+    <p class="time-container">Time left: <span id="time">10s</span></p>
+
+    <p class="score-container">Score: <span id="score">0</span></p>
+
+    <div id="end-game-container" class="end-game-container"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
