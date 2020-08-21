@@ -68,7 +68,7 @@ function gameOver() {
 addWordToDOM();
 
 text.addEventListener('input', e => {
-    const insertedText = e.target.value;
+    const insertedText = e.target.value.toLowerCase();
 
 
     if (insertedText === randomWord) {
